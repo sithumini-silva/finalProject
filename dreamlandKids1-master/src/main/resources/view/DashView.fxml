@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: #fef5e7;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.dreamlandkids.controller.DashBoardController">
+   <children>
+      <ImageView fx:id="homeImage" fitHeight="406.0" fitWidth="649.0" layoutX="17.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../image/main.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblhome" layoutX="104.0" layoutY="395.0" prefHeight="80.0" prefWidth="513.0" text="Get Extra 25% Discount" textFill="#07136f">
+         <font>
+            <Font name="Dyuthi Regular" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblhome2" layoutX="290.0" layoutY="465.0" text=" Save on Everything for baby!" textFill="#eb0505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

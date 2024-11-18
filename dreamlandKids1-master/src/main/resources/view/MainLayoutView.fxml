@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchomepage" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #47bbf9;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.dreamlandkids.controller.MainLayoutController">
+   <children>
+      <VBox fx:id="homeMenu" prefHeight="400.0" prefWidth="166.0" style="-fx-background-color: #6082b6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="49.0" prefWidth="151.0" text="Dreamland Kids" textFill="#ffffd2" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Likhan" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btncustomer" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actcustomer" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="Customer" textFill="#180151" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnitem" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actitem" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="Item" textFill="#180151" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnorders" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actorders" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="Orders" textFill="#180151" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnemployee" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actemployee" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="Employee" textFill="#180151" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnsupplier" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actsupplier" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="supplier" textFill="#180151" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnemployee1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actemployee" prefHeight="24.0" prefWidth="108.0" style="-fx-background-color: #92#f0f8ffa1cf;" text="Employee" textFill="#180151" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="anchomeDisplay" layoutX="151.0" prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: #fef5e7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="homeImage" fitHeight="406.0" fitWidth="649.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../image/main.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblhome2" layoutX="263.0" layoutY="465.0" text=" Save on Everything for baby!" textFill="#eb0505" AnchorPane.bottomAnchor="14.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="lblhome" layoutX="94.0" layoutY="398.0" prefHeight="80.0" prefWidth="513.0" text="Get Extra 25% Discount" textFill="#07136f" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="30.0">
+               <font>
+                  <Font name="Dyuthi Regular" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
