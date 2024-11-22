@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="ancCategory" prefHeight="500.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.dreamlandkids.controller.HomeController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="649.0" layoutX="14.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../image/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="449.0" fitWidth="649.0" layoutX="81.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../image/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="191.0" layoutX="30.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/toy.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="194.0" layoutX="427.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Toddler.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="182.0" layoutX="28.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/gift.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="182.0" layoutX="241.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/funituers.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="177.0" layoutX="241.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/books.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="189.0" layoutX="453.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/cloths.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnToys" layoutX="30.0" layoutY="170.0" mnemonicParsing="false" onAction="#actToys" prefHeight="24.0" prefWidth="182.0" text="Toys" />
+      <Button fx:id="btnCloths" layoutX="453.0" layoutY="405.0" mnemonicParsing="false" onAction="#actCloths" prefHeight="24.0" prefWidth="174.0" text="Cloths" />
+      <Button fx:id="btnFunituers" layoutX="241.0" layoutY="405.0" mnemonicParsing="false" onAction="#actFunitures" prefHeight="24.0" prefWidth="182.0" text="Funituers" />
+      <Button fx:id="btnGift" layoutX="28.0" layoutY="405.0" mnemonicParsing="false" onAction="#actGift" prefHeight="24.0" prefWidth="182.0" text="Gift" />
+      <Button fx:id="btnBooks" layoutX="241.0" layoutY="170.0" mnemonicParsing="false" onAction="#actBooks" prefHeight="24.0" prefWidth="167.0" text="Books" />
+      <Button fx:id="btnToddler" layoutX="430.0" layoutY="170.0" mnemonicParsing="false" onAction="#actToddler" prefHeight="24.0" prefWidth="182.0" text="Toddler" />
+   </children>
+</AnchorPane>

@@ -303,29 +303,41 @@ public class CustomerController  implements Initializable {
     public void generateAllCustomerReportOnAction(ActionEvent actionEvent) {
     }
 
-    @FXML
     public void orderReportOnAction(ActionEvent actionEvent) {
+        CustomerTM customerTM = tblCustomer.getSelectionModel().getSelectedItem();
+
+        if (customerTM == null) {
+            return;
+        }
+
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(
                     getClass()
-                            .getResourceAsStream("/report/reamlandKidsCustomerReport.jrxml"
+                            .getResourceAsStream("/reports/CustomerOrderReport.jrxml"
                             ));
 
             Connection connection = DBConnection.getInstance().getConnection();
 
+            Map<String, Object> parameters = new HashMap<>();
+
+            parameters.put("P_Date", LocalDate.now().toString());
+            parameters.put("P_Customer_Id", customerTM.getCustomerId());
+
             JasperPrint jasperPrint = JasperFillManager.fillReport(
                     jasperReport,
-                    null,
+                    parameters,
                     connection
             );
+
             JasperViewer.viewReport(jasperPrint, false);
         } catch (JRException e) {
             new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
-           e.printStackTrace();
+            e.printStackTrace();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "DB error...!").show();
         }
     }
+
 
     @FXML
     public void openSendMailModel(ActionEvent actionEvent) {

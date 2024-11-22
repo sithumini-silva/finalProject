@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="ancToys" prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: #aeebfc;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.dreamlandkids.controller.ToysController">
+   <children>
+      <ImageView fitHeight="520.0" fitWidth="759.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/toysname.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="144.0" layoutY="424.0" prefHeight="59.0" prefWidth="471.0" text="Baby Collection...." textAlignment="JUSTIFY" textFill="#970f0f">
+         <font>
+            <Font name="Serif Regular" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

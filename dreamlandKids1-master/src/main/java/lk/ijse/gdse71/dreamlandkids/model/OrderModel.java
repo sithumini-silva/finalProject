@@ -37,6 +37,7 @@ public class OrderModel {
                     orderDTO.getCustomerId(),
                     orderDTO.getOrderDate()
             );
+            
             if (isOrderSaved) {
                 boolean isOrderDetailListSaved = orderDetailsModel.saveOrderDetailsList(orderDTO.getOrderDetailsDTOS());
                 if (isOrderDetailListSaved) {

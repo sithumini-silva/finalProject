@@ -33,6 +33,9 @@ public class MainLayoutController implements Initializable {
     private Button btnorders;
 
     @FXML
+    private Button btnHome;
+
+    @FXML
     private Button btnitem;
 
     @FXML
@@ -64,6 +67,9 @@ public class MainLayoutController implements Initializable {
 
     @FXML
     void actsupplier(ActionEvent event) {navigateTo("/view/SupplierView.fxml");}
+
+    @FXML
+    void actHome(ActionEvent event) {navigateTo("/view/HomeView.fxml");}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {navigateTo("/view/DashView.fxml");}

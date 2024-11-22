@@ -39,7 +39,7 @@ public class Appinitializer extends Application {
 
 //            stage.setScene(value);
 //        });
-//        loadingTask.setOnFailed(event -> {
+//        loadingTask.setOnFailed(event -> {2
 //            System.err.println("Failed to load the login page.");
 //        });
 //        new Thread(loadingTask).start();
