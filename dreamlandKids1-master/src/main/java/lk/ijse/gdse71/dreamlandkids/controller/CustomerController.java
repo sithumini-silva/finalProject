@@ -301,6 +301,27 @@ public class CustomerController  implements Initializable {
 
     @FXML
     public void generateAllCustomerReportOnAction(ActionEvent actionEvent) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/reports/CustomerReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
     }
 
     public void orderReportOnAction(ActionEvent actionEvent) {
@@ -343,7 +364,7 @@ public class CustomerController  implements Initializable {
     public void openSendMailModel(ActionEvent actionEvent) {
         CustomerTM selectedItem = tblCustomer.getSelectionModel().getSelectedItem();
         if (selectedItem == null) {
-            new Alert(Alert.AlertType.WARNING, "Please select customer..!");
+            new Alert(Alert.AlertType.WARNING, "Please select customer..!").show();
             return;
         }
 
@@ -358,8 +379,7 @@ public class CustomerController  implements Initializable {
 
             Stage stage = new Stage();
             stage.setScene(new Scene(load));
-            stage.setTitle("Send email");
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("/image/mail_icon.png")));
+            stage.setTitle("Send Email");
 
             stage.initModality(Modality.APPLICATION_MODAL);
 
@@ -368,7 +388,7 @@ public class CustomerController  implements Initializable {
 
             stage.showAndWait();
         } catch (IOException e) {
-            new Alert(Alert.AlertType.ERROR, "Fail to load ui..!");
+            new Alert(Alert.AlertType.ERROR, "Fail to load UI..!");
             e.printStackTrace();
         }
     }

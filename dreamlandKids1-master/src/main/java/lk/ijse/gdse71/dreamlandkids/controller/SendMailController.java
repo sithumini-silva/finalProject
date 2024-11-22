@@ -25,13 +25,11 @@ public class SendMailController {
 
     @FXML
     public void sendUsingGmailOnAction(ActionEvent actionEvent) {
-        if (customerEmail == null || customerEmail.isEmpty()) {
-            new Alert(Alert.AlertType.WARNING, "Customer email is missing!").show();
+        if (customerEmail == null) {
             return;
         }
 
-        String from = "sithusilva94@gmail.com";
-        String password = "pjhk cbfn myhi xufo";
+        final String FROM = "sithusilva94@gmail.com";
 
         String subject = txtSubject.getText();
         String body = txtBody.getText();
@@ -40,46 +38,48 @@ public class SendMailController {
             new Alert(Alert.AlertType.WARNING, "Subject and body must not be empty!").show();
             return;
         }
-
-        boolean isSent = sendEmailWithGmail(from, password, customerEmail, subject, body);
-
-        if (isSent) {
-            new Alert(Alert.AlertType.INFORMATION, "Email sent successfully!").show();
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to send the email.").show();
-        }
+        sendEmailWithGmail(FROM, customerEmail, subject, body);
     }
 
-    /**
-     * Sends an email using the Gmail SMTP server.
-     */
-    private boolean sendEmailWithGmail(String from, String password, String to, String subject, String messageBody) {
+    private void sendEmailWithGmail(String from, String customerEmail, String subject, String messageBody) {
+        String PASSWORD = "pjhk cbfn myhi xufo";
+
         Properties props = new Properties();
+
         props.put("mail.smtp.auth", "true");
+
         props.put("mail.smtp.starttls.enable", "true");
+
         props.put("mail.smtp.host", "smtp.gmail.com");
+
         props.put("mail.smtp.port", "587");
 
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
         Session session = Session.getInstance(props, new Authenticator() {
-            @Override
+
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, password);
+                return new PasswordAuthentication(from, PASSWORD);
             }
         });
 
         try {
             Message message = new MimeMessage(session);
+
             message.setFrom(new InternetAddress(from));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(customerEmail));
+
             message.setSubject(subject);
+
             message.setText(messageBody);
 
             Transport.send(message);
-            System.out.println("Email sent successfully!");
-            return true;
+
+            new Alert(Alert.AlertType.INFORMATION, "Email sent successfully!").show();
         } catch (MessagingException e) {
             e.printStackTrace();
-            return false;
+            new Alert(Alert.AlertType.ERROR, "Failed to send email.").show();
         }
     }
 }
